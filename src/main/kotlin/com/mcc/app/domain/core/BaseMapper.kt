@@ -1,4 +1,4 @@
-package com.mcc.app.application.core
+package com.mcc.app.domain.core
 
 interface BaseMapper<Input, Output> {
     fun fromModel(data: Output): Input

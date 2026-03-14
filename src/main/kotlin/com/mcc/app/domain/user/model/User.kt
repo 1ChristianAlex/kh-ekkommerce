@@ -7,10 +7,15 @@ data class User(
     val firstName: String,
     val lastName: String,
     val email: String,
-    val phone: String?,
+    private val _phone: String?,
     val isActive: Boolean,
-    val createdAt: LocalDateTime,
+    val createdAt: LocalDateTime?,
     val updatedAt: LocalDateTime?
-)
+) {
+    val phone: String
+        get() {
+            return _phone?.replace(Regex("\\D"), "") ?: ""
+        }
+}
 
 

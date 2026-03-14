@@ -30,6 +30,7 @@ dependencies {
     implementation(libs.ktor.server.compression)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
+
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
 }
