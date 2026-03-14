@@ -4,17 +4,10 @@ import com.mcc.app.application.core.BaseRepository
 import org.jetbrains.exposed.v1.core.Table
 import org.jetbrains.exposed.v1.core.dao.id.EntityID
 import org.jetbrains.exposed.v1.jdbc.Database
-import org.jetbrains.exposed.v1.jdbc.SchemaUtils
 import org.jetbrains.exposed.v1.jdbc.transactions.suspendTransaction
-import org.jetbrains.exposed.v1.jdbc.transactions.transaction
 
-abstract class BaseExposedRepository<T : Table, Model>(private val database: Database, table: T) :
+abstract class BaseExposedRepository<T : Table, Model>(private val database: Database) :
     BaseRepository<Model> {
-    init {
-        transaction(database) {
-            SchemaUtils.create(table)
-        }
-    }
 
     abstract override suspend fun create(data: Model): Int
     abstract override suspend fun read(id: Int): Model?

@@ -1,15 +1,20 @@
 package com.mcc.app.adapter.output.exposed.order.database
 
 import com.mcc.app.adapter.output.exposed.BaseTable
-import com.mcc.app.adapter.output.exposed.user.database.Addresses
-import com.mcc.app.adapter.output.exposed.user.database.Users
+import com.mcc.app.adapter.output.exposed.user.database.AddressEntity
+import com.mcc.app.adapter.output.exposed.user.database.AddressesTable
+import com.mcc.app.adapter.output.exposed.user.database.UserEntity
+import com.mcc.app.adapter.output.exposed.user.database.UsersTable
+import org.jetbrains.exposed.v1.core.dao.id.EntityID
+import org.jetbrains.exposed.v1.dao.IntEntity
+import org.jetbrains.exposed.v1.dao.IntEntityClass
 import java.math.BigDecimal
 
-object Orders : BaseTable("orders") {
+object OrdersTable : BaseTable("orders") {
 
-    val userId = reference("userId", Users.id)
+    val userId = reference("userId", UsersTable.id)
 
-    val addressId = reference("addressId", Addresses.id)
+    val addressId = reference("addressId", AddressesTable.id)
 
     val status = varchar("status", 50)
 
@@ -18,4 +23,26 @@ object Orders : BaseTable("orders") {
     val shippingCost = decimal("shippingCost", 10, 2)
 
     val discountAmount = decimal("discountAmount", 10, 2).default(BigDecimal.ZERO)
+}
+
+class OrderEntity(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<OrderEntity>(OrdersTable)
+
+    var user by UserEntity referencedOn OrdersTable.userId
+
+    var address by AddressEntity referencedOn OrdersTable.addressId
+
+    var status by OrdersTable.status
+
+    var totalAmount by OrdersTable.totalAmount
+    var shippingCost by OrdersTable.shippingCost
+    var discountAmount by OrdersTable.discountAmount
+
+    var createdAt by OrdersTable.createdAt
+    var updatedAt by OrdersTable.updatedAt
+
+    val items by OrderItemEntity referrersOn OrderItemsTable.orderId
+    val payments by PaymentEntity referrersOn PaymentsTable.orderId
+    val shipments by ShipmentEntity referrersOn ShipmentsTable.orderId
+    val statusHistory by OrderStatusHistoryEntity referrersOn OrderStatusHistoryTable.orderId
 }

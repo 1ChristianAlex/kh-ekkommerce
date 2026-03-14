@@ -1,14 +1,11 @@
 package com.mcc.app.adapter.output.exposed
 
-import com.mcc.app.adapter.output.exposed.catalog.database.Categories
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductImages
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductReviews
-import com.mcc.app.adapter.output.exposed.catalog.database.Products
+import com.mcc.app.adapter.output.exposed.catalog.database.*
 import com.mcc.app.adapter.output.exposed.order.database.*
-import com.mcc.app.adapter.output.exposed.user.database.Addresses
-import com.mcc.app.adapter.output.exposed.user.database.Roles
-import com.mcc.app.adapter.output.exposed.user.database.UserRoles
-import com.mcc.app.adapter.output.exposed.user.database.Users
+import com.mcc.app.adapter.output.exposed.user.database.AddressesTable
+import com.mcc.app.adapter.output.exposed.user.database.RolesTable
+import com.mcc.app.adapter.output.exposed.user.database.UserRolesTable
+import com.mcc.app.adapter.output.exposed.user.database.UsersTable
 import io.ktor.server.application.*
 import io.ktor.server.plugins.di.*
 import org.jetbrains.exposed.v1.jdbc.Database
@@ -28,20 +25,22 @@ private fun Application.initTables() {
     val database: Database by dependencies
     transaction(database) {
         SchemaUtils.create(
-            Users,
-            Roles,
-            UserRoles,
-            Addresses,
-            Categories,
-            Products,
-            ProductImages,
-            Carts,
-            CartItems,
-            Orders,
-            OrderItems,
-            Payments,
-            Shipments,
-            ProductReviews
+            UsersTable,
+            RolesTable,
+            UserRolesTable,
+            ProductAttributesTable,
+            AddressesTable,
+            OrderStatusHistoryTable,
+            CategoriesTable,
+            ProductsTable,
+            ProductImagesTable,
+            CartsTable,
+            CartItemsTable,
+            OrdersTable,
+            OrderItemsTable,
+            PaymentsTable,
+            ShipmentsTable,
+            ProductReviewsTable
         )
     }
 }
