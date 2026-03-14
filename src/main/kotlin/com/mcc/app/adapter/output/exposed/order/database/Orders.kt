@@ -2,7 +2,7 @@ package com.mcc.app.adapter.output.exposed.order.database
 
 import com.mcc.app.adapter.output.exposed.BaseTable
 import com.mcc.app.adapter.output.exposed.user.database.AddressEntity
-import com.mcc.app.adapter.output.exposed.user.database.AddressesTable
+import com.mcc.app.adapter.output.exposed.user.database.AddressTable
 import com.mcc.app.adapter.output.exposed.user.database.UserEntity
 import com.mcc.app.adapter.output.exposed.user.database.UsersTable
 import org.jetbrains.exposed.v1.core.dao.id.EntityID
@@ -14,7 +14,7 @@ object OrdersTable : BaseTable("orders") {
 
     val userId = reference("userId", UsersTable.id)
 
-    val addressId = reference("addressId", AddressesTable.id)
+    val addressId = reference("addressId", AddressTable.id)
 
     val status = varchar("status", 50)
 

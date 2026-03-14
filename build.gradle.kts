@@ -22,6 +22,7 @@ dependencies {
     implementation(libs.exposed.kotlin.datetime)
     implementation(libs.ktor.server.di)
     implementation(libs.postgresql)
+    implementation(libs.argon2)
     implementation(libs.h2)
     implementation(libs.ktor.server.request.validation)
     implementation(libs.ktor.server.auth)

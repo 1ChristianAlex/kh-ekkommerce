@@ -2,10 +2,9 @@ package com.mcc.app.adapter.output.exposed
 
 import com.mcc.app.adapter.output.exposed.catalog.database.*
 import com.mcc.app.adapter.output.exposed.order.database.*
-import com.mcc.app.adapter.output.exposed.user.database.AddressesTable
-import com.mcc.app.adapter.output.exposed.user.database.RolesTable
-import com.mcc.app.adapter.output.exposed.user.database.UserRolesTable
+import com.mcc.app.adapter.output.exposed.user.database.AddressTable
 import com.mcc.app.adapter.output.exposed.user.database.UsersTable
+import org.jetbrains.exposed.v1.core.StdOutSqlLogger
 import org.jetbrains.exposed.v1.jdbc.Database
 import org.jetbrains.exposed.v1.jdbc.SchemaUtils
 import org.jetbrains.exposed.v1.jdbc.transactions.transaction
@@ -26,10 +25,8 @@ class MemoryConnection {
                 transaction {
                     SchemaUtils.create(
                         UsersTable,
-                        RolesTable,
-                        UserRolesTable,
                         ProductAttributesTable,
-                        AddressesTable,
+                        AddressTable,
                         OrderStatusHistoryTable,
                         CategoriesTable,
                         ProductsTable,

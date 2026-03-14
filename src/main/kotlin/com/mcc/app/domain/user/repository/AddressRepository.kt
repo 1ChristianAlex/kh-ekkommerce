@@ -3,14 +3,14 @@ package com.mcc.app.domain.user.repository
 import com.mcc.app.domain.core.BaseDelete
 import com.mcc.app.domain.core.BaseRead
 import com.mcc.app.domain.core.BaseUpdate
-import com.mcc.app.domain.user.model.User
+import com.mcc.app.domain.user.model.Address
 
-interface UserRepository :
-    BaseRead<User>,
-    BaseUpdate<User>,
+interface AddressRepository :
+    BaseRead<Address>,
+    BaseUpdate<Address>,
     BaseDelete {
     suspend fun createRead(
-        data: User,
-        password: String
-    ): User
+        data: Address,
+        userId: Int
+    ): Address
 }

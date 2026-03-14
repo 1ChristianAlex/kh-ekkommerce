@@ -14,5 +14,6 @@ data class Address(
     val country: String,
     val zipCode: String,
     val isDefault: Boolean,
-    val createdAt: LocalDateTime
+    val createdAt: LocalDateTime?,
+    val updatedAt: LocalDateTime?,
 )

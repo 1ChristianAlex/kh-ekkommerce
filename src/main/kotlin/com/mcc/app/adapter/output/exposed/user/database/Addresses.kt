@@ -1,12 +1,11 @@
 package com.mcc.app.adapter.output.exposed.user.database
 
 import com.mcc.app.adapter.output.exposed.BaseTable
-import com.mcc.app.adapter.output.exposed.order.database.ShipmentsTable
 import org.jetbrains.exposed.v1.core.dao.id.EntityID
 import org.jetbrains.exposed.v1.dao.IntEntity
 import org.jetbrains.exposed.v1.dao.IntEntityClass
 
-object AddressesTable : BaseTable("addresses") {
+object AddressTable : BaseTable("address") {
 
     val userId = reference("userId", UsersTable.id)
 
@@ -26,21 +25,21 @@ object AddressesTable : BaseTable("addresses") {
 }
 
 class AddressEntity(id: EntityID<Int>) : IntEntity(id) {
-    companion object : IntEntityClass<AddressEntity>(AddressesTable)
+    companion object : IntEntityClass<AddressEntity>(AddressTable)
 
-    var user by UserEntity referencedOn AddressesTable.userId
+    var user by UserEntity referencedOn AddressTable.userId
 
-    var street by AddressesTable.street
-    var number by AddressesTable.number
-    var complement by AddressesTable.complement
-    var neighborhood by AddressesTable.neighborhood
-    var city by AddressesTable.city
-    var state by AddressesTable.state
-    var country by AddressesTable.country
-    var zipCode by AddressesTable.zipCode
+    var street by AddressTable.street
+    var number by AddressTable.number
+    var complement by AddressTable.complement
+    var neighborhood by AddressTable.neighborhood
+    var city by AddressTable.city
+    var state by AddressTable.state
+    var country by AddressTable.country
+    var zipCode by AddressTable.zipCode
 
-    var isDefault by AddressesTable.isDefault
+    var isDefault by AddressTable.isDefault
 
-    var createdAt by AddressesTable.createdAt
-    var updatedAt by AddressesTable.updatedAt
+    var createdAt by AddressTable.createdAt
+    var updatedAt by AddressTable.updatedAt
 }

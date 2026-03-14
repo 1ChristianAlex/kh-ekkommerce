@@ -9,7 +9,6 @@ import com.mcc.app.domain.user.model.User
 import com.mcc.app.domain.user.repository.UserRepository
 import org.jetbrains.exposed.v1.jdbc.Database
 import kotlin.uuid.ExperimentalUuidApi
-import kotlin.uuid.Uuid
 
 class UserExposedRepositoryImpl(
     database: Database,
@@ -20,19 +19,11 @@ class UserExposedRepositoryImpl(
                 firstName = data.firstName
                 lastName = data.lastName
                 email = data.email
-                passwordHash = password
+                this.password = password
                 phone = data.phone
                 isActive = data.isActive
             }.toModel()
         }
-    }
-
-    override suspend fun create(data: User): Int {
-        return createRead(data).id
-    }
-
-    override suspend fun createRead(data: User): User {
-        return createRead(data, Uuid.generateV7().toString())
     }
 
     override suspend fun read(id: Int): User {
@@ -47,9 +38,7 @@ class UserExposedRepositoryImpl(
                 it.firstName = data.firstName
                 it.lastName = data.lastName
                 it.email = data.email
-                it.passwordHash = ""
                 it.phone = data.phone
-                it.isActive = data.isActive
             }
         }
     }

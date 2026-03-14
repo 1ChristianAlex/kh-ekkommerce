@@ -10,7 +10,9 @@ data class User(
     private val _phone: String?,
     val isActive: Boolean,
     val createdAt: LocalDateTime?,
-    val updatedAt: LocalDateTime?
+    val updatedAt: LocalDateTime?,
+    val role: Role = Role.CLIENT,
+    val address: List<Address> = emptyList()
 ) {
     val phone: String
         get() {
