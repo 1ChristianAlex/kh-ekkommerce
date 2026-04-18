@@ -1,11 +1,12 @@
 package com.ekk.app.adapter.output.exposed.user.database
 
-import com.mcc.app.adapter.output.exposed.BaseTable
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductReviewEntity
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductReviewsTable
-import com.mcc.app.adapter.output.exposed.order.database.OrderEntity
-import com.mcc.app.adapter.output.exposed.order.database.OrdersTable
-import com.mcc.app.domain.user.model.Role
+
+import com.ekk.app.adapter.output.exposed.BaseTable
+import com.ekk.app.adapter.output.exposed.catalog.database.ProductReviewEntity
+import com.ekk.app.adapter.output.exposed.catalog.database.ProductReviewsTable
+import com.ekk.app.adapter.output.exposed.order.database.OrderEntity
+import com.ekk.app.adapter.output.exposed.order.database.OrdersTable
+import com.ekk.app.domain.user.model.Role
 import org.jetbrains.exposed.v1.core.dao.id.EntityID
 import org.jetbrains.exposed.v1.dao.IntEntity
 import org.jetbrains.exposed.v1.dao.IntEntityClass

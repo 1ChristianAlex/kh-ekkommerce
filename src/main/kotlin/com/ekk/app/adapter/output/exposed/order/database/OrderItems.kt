@@ -1,8 +1,8 @@
 package com.ekk.app.adapter.output.exposed.order.database
 
-import com.mcc.app.adapter.output.exposed.BaseTable
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductEntity
-import com.mcc.app.adapter.output.exposed.catalog.database.ProductsTable
+import com.ekk.app.adapter.output.exposed.BaseTable
+import com.ekk.app.adapter.output.exposed.catalog.database.ProductEntity
+import com.ekk.app.adapter.output.exposed.catalog.database.ProductsTable
 import org.jetbrains.exposed.v1.core.dao.id.EntityID
 import org.jetbrains.exposed.v1.dao.IntEntity
 import org.jetbrains.exposed.v1.dao.IntEntityClass

@@ -1,7 +1,7 @@
 package com.ekk.app.adapter.output.exposed.user.mapper
 
-import com.mcc.app.adapter.output.exposed.user.database.AddressEntity
-import com.mcc.app.domain.user.model.Address
+import com.ekk.app.adapter.output.exposed.user.database.AddressEntity
+import com.ekk.app.domain.user.model.Address
 
 fun AddressEntity.toModel(): Address {
     return Address(

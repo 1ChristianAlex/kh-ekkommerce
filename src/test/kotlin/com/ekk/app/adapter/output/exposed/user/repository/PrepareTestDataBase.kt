@@ -1,9 +1,9 @@
 package com.ekk.app.adapter.output.exposed.user.repository
 
-import com.mcc.app.adapter.output.exposed.user.database.AddressEntity
-import com.mcc.app.adapter.output.exposed.user.database.UserEntity
-import com.mcc.app.adapter.output.exposed.user.database.UsersTable
-import com.mcc.app.domain.user.model.Role
+import com.ekk.app.adapter.output.exposed.user.database.AddressEntity
+import com.ekk.app.adapter.output.exposed.user.database.UserEntity
+import com.ekk.app.adapter.output.exposed.user.database.UsersTable
+import com.ekk.app.domain.user.model.Role
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.v1.core.eq
 import org.jetbrains.exposed.v1.jdbc.Database

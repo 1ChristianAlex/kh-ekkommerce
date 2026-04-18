@@ -4,11 +4,11 @@ plugins {
     alias(libs.plugins.kotlin.plugin.serialization)
 }
 
-group = "com.mcc.app"
+group = "com.ekk.app"
 version = "0.0.1"
 
 application {
-    mainClass = "com.mcc.app.ApplicationKt"
+    mainClass = "com.ekk.app.ApplicationKt"
 }
 
 dependencies {

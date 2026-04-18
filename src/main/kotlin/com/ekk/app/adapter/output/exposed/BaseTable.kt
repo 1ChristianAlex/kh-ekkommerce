@@ -16,6 +16,4 @@ abstract class BaseTable(
 }
 
 
-abstract class BaseEntity(id: EntityID<Int>) : IntEntity(id) {
-
-}
+abstract class BaseEntity(id: EntityID<Int>) : IntEntity(id)

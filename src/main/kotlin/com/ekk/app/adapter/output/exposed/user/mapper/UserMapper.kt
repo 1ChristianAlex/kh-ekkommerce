@@ -1,7 +1,7 @@
 package com.ekk.app.adapter.output.exposed.user.mapper
 
-import com.mcc.app.adapter.output.exposed.user.database.UserEntity
-import com.mcc.app.domain.user.model.User
+import com.ekk.app.adapter.output.exposed.user.database.UserEntity
+import com.ekk.app.domain.user.model.User
 import org.jetbrains.exposed.v1.jdbc.transactions.suspendTransaction
 
 suspend fun UserEntity.toModel(): User {

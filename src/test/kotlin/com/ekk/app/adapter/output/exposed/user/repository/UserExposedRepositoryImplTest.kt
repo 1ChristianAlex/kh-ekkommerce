@@ -1,8 +1,8 @@
 package com.ekk.app.adapter.output.exposed.user.repository
 
-import com.mcc.app.adapter.output.exposed.MemoryConnection
-import com.mcc.app.domain.user.model.Role
-import com.mcc.app.domain.user.model.User
+import com.ekk.app.adapter.output.exposed.MemoryConnection
+import com.ekk.app.domain.user.model.Role
+import com.ekk.app.domain.user.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher

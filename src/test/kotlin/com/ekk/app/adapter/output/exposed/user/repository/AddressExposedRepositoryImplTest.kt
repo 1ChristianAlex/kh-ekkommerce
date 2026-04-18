@@ -1,9 +1,12 @@
 package com.ekk.app.adapter.output.exposed.user.repository
 
-import com.mcc.app.adapter.output.exposed.MemoryConnection
-import com.mcc.app.adapter.output.exposed.user.database.UserEntity
-import com.mcc.app.adapter.output.exposed.user.database.UsersTable
-import com.mcc.app.domain.user.model.Address
+import com.ekk.app.adapter.output.exposed.MemoryConnection
+import com.ekk.app.adapter.output.exposed.user.database.UserEntity
+import com.ekk.app.adapter.output.exposed.user.database.UsersTable
+import com.ekk.app.domain.user.model.Address
+import com.ekk.app.adapter.output.exposed.user.database.UserEntity
+import com.ekk.app.adapter.output.exposed.user.database.UsersTable
+import com.ekk.app.domain.user.model.Address
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -14,7 +17,6 @@ import org.jetbrains.exposed.v1.core.neq
 import org.jetbrains.exposed.v1.jdbc.transactions.suspendTransaction
 import kotlin.test.*
 import kotlin.uuid.ExperimentalUuidApi
-import kotlin.uuid.Uuid
 
 
 @OptIn(ExperimentalCoroutinesApi::class, ExperimentalUuidApi::class)

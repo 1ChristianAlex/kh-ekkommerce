@@ -5,12 +5,12 @@ import org.jetbrains.exposed.v1.core.dao.id.EntityID
 import org.jetbrains.exposed.v1.dao.IntEntity
 import org.jetbrains.exposed.v1.dao.IntEntityClass
 
-object CategoriesTable : com.ekk.app.adapter.output.exposed.BaseTable("categories") {
+object CategoriesTable : BaseTable("categories") {
 
     val name = varchar("name", 150)
     val description = varchar("description", 500).nullable()
 
-    val parentCategoryId = reference("parentCategoryId", CategoriesTable.id).nullable()
+    val parentCategoryId = reference("parentCategoryId", id).nullable()
 }
 
 

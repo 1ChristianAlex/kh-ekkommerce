@@ -2,12 +2,12 @@
 
 package com.ekk.app.adapter.output.exposed.user.repository
 
-import com.mcc.app.adapter.output.exposed.BaseExposedRepository
-import com.mcc.app.adapter.output.exposed.user.database.AddressEntity
-import com.mcc.app.adapter.output.exposed.user.database.UserEntity
-import com.mcc.app.adapter.output.exposed.user.mapper.toModel
-import com.mcc.app.domain.user.model.Address
-import com.mcc.app.domain.user.repository.AddressRepository
+import com.ekk.app.adapter.output.exposed.BaseExposedRepository
+import com.ekk.app.adapter.output.exposed.user.database.AddressEntity
+import com.ekk.app.adapter.output.exposed.user.database.UserEntity
+import com.ekk.app.adapter.output.exposed.user.mapper.toModel
+import com.ekk.app.domain.user.model.Address
+import com.ekk.app.domain.user.repository.AddressRepository
 import org.jetbrains.exposed.v1.jdbc.Database
 import kotlin.uuid.ExperimentalUuidApi
 
