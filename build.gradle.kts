@@ -29,6 +29,8 @@ dependencies {
     implementation(libs.ktor.server.auth.jwt)
     implementation(libs.ktor.server.cors)
     implementation(libs.ktor.server.compression)
+    implementation(libs.ktor.server.loggs)
+    implementation(libs.ktor.server.status.page)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
 
